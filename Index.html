@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gio, Your Local IT Professional</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    .background-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    header {
+      background-color: #2d2d2d;
+      padding: 2rem;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .video-section {
+      text-align: center;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .video-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      max-width: 360px;
+      height: 640px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .video-note {
+      font-size: 1rem;
+      color: #aaa;
+    }
+
+    .testimonials {
+      padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .testimonial {
+      background-color: #2a2a2a;
+      margin: 1rem 0;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .profile-pic {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .testimonial-text {
+      flex-grow: 1;
+    }
+
+    .name {
+      font-weight: bold;
+      margin-bottom: 0.25rem;
+    }
+
+    .stars {
+      color: gold;
+      margin-bottom: 0.5rem;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      font-size: 1.25rem;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+
+    #contact {
+      background-color: #000;
+      color: #fff;
+      padding: 4rem 2rem;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    #contact h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    #contact p {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 1rem auto;
+      line-height: 1.6;
+    }
+
+    #contact .phone {
+      font-size: 1.75rem;
+      font-weight: bold;
+      color: #4CAF50;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    #contact .back-button {
+      margin-top: 3rem;
+    }
+
+    .shark-cursor, .click-pointer {
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    .shark-cursor {
+      width: 40px;
+      height: 40px;
+    }
+
+    .click-pointer {
+      width: 8px;
+      height: 8px;
+      background-color: black;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+  <canvas class="background-canvas"></canvas>
+  <div class="click-pointer"></div>
+  <img class="shark-cursor" src="https://media.tenor.com/5zUUL3Osw2AAAAAi/shark-blahaj.gif" alt="shark cursor" />
+
+  <header>
+    Gio, your local IT professional
+    <div>
+      <a href="#contact" class="button">MORE INFORMATION</a>
+    </div>
+  </header>
+
+  <section class="video-section">
+    <div class="video-wrapper">
+      <video controls autoplay muted playsinline>
+        <source src="https://d1fw7tsl1fv5p3.cloudfront.net/6zz82%2Fpreview%2F68969231%2Fmain_x360.mp4?response-content-disposition=inline%3Bfilename%3D%22main_x360.mp4%22%3B&response-content-type=video%2Fmp4&Expires=1752312648&Signature=eWzBdHR7LMRN1nhHh-N9ZlZ41~08XKH9NNqmh6-a2dsXPHyBH9tgCU9O0LNu9SzioXwMK-co1gDLFxu3FXgAYROWgB117qf~qZVe9XDeGHHoe9w9tl0eDZk3MSAOfeqdp2YiSjb4nWbz81UQRZjgMJmIuw8kr7zQ84r8GOAWK4YeJo~ZfhDgPu~iQBw9L8b8A4vKrVPk9Ivu5j5UZaSU2sEiYmzhcpXpg~GmDw-fb9YNPMxuxkedz9pDB3g1yDyotRNOHmIgthK7WEN6taapIQJYiKyosUXxdiJ9WS4~2XZzBfLAl6GBngFf-47wnz-JTLX070rnU4tCu6LACdgb1Q__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-note">🔈 Be sure to unmute the video!</div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="testimonial">
+      <img src="https://i.imgur.com/jRUHfBq.png" alt="Sarah J." class="profile-pic">
+      <div class="testimonial-text">
+        <div class="name">Sarah J.</div>
+        <div class="stars">★★★★★</div>
+        <div class="text">Gio helped me figure out how to use my new computer — now I feel confident using it every day!</div>
+      </div>
+    </div>
+    <div class="testimonial">
+      <img src="https://i.imgur.com/T7NMULi.png" alt="Brandon T." class="profile-pic">
+      <div class="testimonial-text">
+        <div class="name">Brandon T.</div>
+        <div class="stars">★★★★★</div>
+        <div class="text">Super professional and really patient. He walked me through everything step-by-step.</div>
+      </div>
+    </div>
+    <div class="testimonial">
+      <img src="https://i.imgur.com/4iaYoGd.png" alt="Marble Goose" class="profile-pic">
+      <div class="testimonial-text">
+        <div class="name">Marble Goose</div>
+        <div class="stars">★★★★★</div>
+        <div class="text">I had no idea how to do something on my computer — Gio didn’t either at first, but he figured it out fast and then taught me how to do it myself.</div>
+      </div>
+    </div>
+    <div class="testimonial">
+      <img src="https://i.imgur.com/QlpTdrw.png" alt="Lena R." class="profile-pic">
+      <div class="testimonial-text">
+        <div class="name">Lena R.</div>
+        <div class="stars">★★★★★</div>
+        <div class="text">Explained everything so clearly. I'm not afraid of my iPhone anymore.</div>
+      </div>
+    </div>
+    <div class="testimonial">
+      <img src="https://i.imgur.com/xe7j73y.png" alt="Rex Vortex" class="profile-pic">
+      <div class="testimonial-text">
+        <div class="name">Rex Vortex</div>
+        <div class="stars">★★★★★</div>
+        <div class="text">I asked Gio something weird I thought no one would know. He looked it up, figured it out, and then showed me exactly how to do it. Legend.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="phone">Call or text me: 650-469-3706</div>
+    <h1>Let's Get in Touch</h1>
+    <p>
+      I’m Gio — your local IT professional with a passion for helping people feel confident with their technology.
+      Whether you're stuck, curious, or just need a hand, I make tech problems simple and stress-free.
+    </p>
+    <p>
+      No question is too small. If I don’t know the answer, I’ll find it — and make sure you understand it too.
+    </p>
+    <div class="phone">Call or text me: 650-469-3706</div>
+    <div class="back-button">
+      <a href="#top" class="button">RETURN TO HOME</a>
+    </div>
+  </section>
+
+  <script>
+    const canvas = document.querySelector('.background-canvas');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    function resizeCanvas() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    let t = 0;
+    function draw() {
+      ctx.clearRect(0, 0, width, height);
+      ctx.strokeStyle = 'rgba(0, 0, 0, 0.2)';
+      ctx.lineWidth = 1;
+
+      for (let i = 0; i < width; i += 20) {
+        ctx.beginPath();
+        for (let j = 0; j < height; j += 10) {
+          const wave = Math.sin((j + t) / 20 + i * 0.01) * (5 + Math.sin((t + j) * 0.01) * 5);
+          const x = i + wave;
+          ctx.lineTo(x, j);
+        }
+        ctx.stroke();
+      }
+      t += 0.5;
+      requestAnimationFrame(draw);
+    }
+    draw();
+
+    const shark = document.querySelector('.shark-cursor');
+    const circle = document.querySelector('.click-pointer');
+
+    let pointerX = 0, pointerY = 0, sharkX = 0, sharkY = 0;
+
+    document.addEventListener('mousemove', e => {
+      pointerX = e.clientX;
+      pointerY = e.clientY;
+      circle.style.left = `${pointerX}px`;
+      circle.style.top = `${pointerY}px`;
+    });
+
+    function updateShark() {
+      sharkX += (pointerX + 4 - sharkX) * 0.2;
+      sharkY += (pointerY + 4 - sharkY) * 0.2;
+      shark.style.left = `${sharkX}px`;
+      shark.style.top = `${sharkY}px`;
+      requestAnimationFrame(updateShark);
+    }
+    updateShark();
+  </script>
+</body>
+</html>
