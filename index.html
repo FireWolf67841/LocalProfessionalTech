@@ -51,12 +51,12 @@
       flex-wrap: wrap;
     }
 
-    .video-wrapper video {
+    .video-wrapper iframe {
       width: 100%;
       max-width: 360px;
       height: 640px;
       border-radius: 8px;
-      object-fit: cover;
+      border: none;
     }
 
     .video-note {
@@ -184,10 +184,7 @@
 
   <section class="video-section">
     <div class="video-wrapper">
-      <video controls autoplay muted playsinline>
-        <source src="https://d1fw7tsl1fv5p3.cloudfront.net/6zz82%2Fpreview%2F68969231%2Fmain_x360.mp4?response-content-disposition=inline%3Bfilename%3D%22main_x360.mp4%22%3B&response-content-type=video%2Fmp4&Expires=1752312648&Signature=eWzBdHR7LMRN1nhHh-N9ZlZ41~08XKH9NNqmh6-a2dsXPHyBH9tgCU9O0LNu9SzioXwMK-co1gDLFxu3FXgAYROWgB117qf~qZVe9XDeGHHoe9w9tl0eDZk3MSAOfeqdp2YiSjb4nWbz81UQRZjgMJmIuw8kr7zQ84r8GOAWK4YeJo~ZfhDgPu~iQBw9L8b8A4vKrVPk9Ivu5j5UZaSU2sEiYmzhcpXpg~GmDw-fb9YNPMxuxkedz9pDB3g1yDyotRNOHmIgthK7WEN6taapIQJYiKyosUXxdiJ9WS4~2XZzBfLAl6GBngFf-47wnz-JTLX070rnU4tCu6LACdgb1Q__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <iframe src="https://www.youtube.com/embed/N89rRVCsGkU" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <div class="video-note">🔈 Be sure to unmute the video!</div>
     </div>
   </section>
@@ -253,7 +250,7 @@
 
   <script>
     const canvas = document.querySelector('.background-canvas');
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext(' '2d');
     let width, height;
     function resizeCanvas() {
       width = canvas.width = window.innerWidth;
