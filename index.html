@@ -166,7 +166,7 @@
       height: 8px;
       background-color: black;
       border-radius: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(0, 0);
     }
   </style>
 </head>
@@ -249,8 +249,9 @@
   </section>
 
   <script>
+    // Background animation
     const canvas = document.querySelector('.background-canvas');
-    const ctx = canvas.getContext(' '2d');
+    const ctx = canvas.getContext('2d');
     let width, height;
     function resizeCanvas() {
       width = canvas.width = window.innerWidth;
@@ -279,26 +280,29 @@
     }
     draw();
 
+    // Cursor behavior
     const shark = document.querySelector('.shark-cursor');
-    const circle = document.querySelector('.click-pointer');
+    const dot = document.querySelector('.click-pointer');
 
-    let pointerX = 0, pointerY = 0, sharkX = 0, sharkY = 0;
+    let pointerX = 0, pointerY = 0;
+    let sharkX = 0, sharkY = 0;
 
     document.addEventListener('mousemove', e => {
       pointerX = e.clientX;
       pointerY = e.clientY;
-      circle.style.left = `${pointerX}px`;
-      circle.style.top = `${pointerY}px`;
+      // Dot moves immediately to cursor
+      dot.style.left = `${pointerX}px`;
+      dot.style.top = `${pointerY}px`;
     });
 
-    function updateShark() {
-      sharkX += (pointerX + 4 - sharkX) * 0.2;
-      sharkY += (pointerY + 4 - sharkY) * 0.2;
+    function followShark() {
+      sharkX += (pointerX - sharkX) * 0.1;
+      sharkY += (pointerY - sharkY) * 0.1;
       shark.style.left = `${sharkX}px`;
       shark.style.top = `${sharkY}px`;
-      requestAnimationFrame(updateShark);
+      requestAnimationFrame(followShark);
     }
-    updateShark();
+    followShark();
   </script>
 </body>
 </html>
