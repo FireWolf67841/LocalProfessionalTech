@@ -53,8 +53,8 @@
 
     .video-wrapper iframe {
       width: 100%;
-      max-width: 360px;
-      height: 640px;
+      max-width: 560px;
+      height: 384px;
       border-radius: 8px;
       border: none;
     }
@@ -184,12 +184,13 @@
 
   <section class="video-section">
     <div class="video-wrapper">
-      <iframe src="https://www.youtube.com/embed/N89rRVCsGkU" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe src="https://archive.org/embed/bb9eeb9112f4446a8c595ee7e9eb3698_202507" width="560" height="384" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>
       <div class="video-note">🔈 Be sure to unmute the video!</div>
     </div>
   </section>
 
   <section class="testimonials">
+    <!-- Testimonials content stays the same -->
     <div class="testimonial">
       <img src="https://i.imgur.com/jRUHfBq.png" alt="Sarah J." class="profile-pic">
       <div class="testimonial-text">
@@ -290,7 +291,6 @@
     document.addEventListener('mousemove', e => {
       pointerX = e.clientX;
       pointerY = e.clientY;
-      // Dot moves immediately to cursor
       dot.style.left = `${pointerX}px`;
       dot.style.top = `${pointerY}px`;
     });
